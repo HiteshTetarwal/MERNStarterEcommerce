@@ -1,6 +1,4 @@
 const { UnauthorizedError } = require("express-jwt");
-const order = require("../models/order");
-const { Order } = require("../models/order");
 const User = require("../models/user");
 
 
@@ -42,6 +40,7 @@ exports.updateUser = (req, res) => {
         }
     )
 }
+
 
 exports.userPurchaseList = (req,res) => {
     Order.find({user: req.profile._id})
