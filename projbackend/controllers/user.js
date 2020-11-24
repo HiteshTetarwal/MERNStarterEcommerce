@@ -1,4 +1,6 @@
 const { UnauthorizedError } = require("express-jwt");
+const order = require("../models/order");
+const { Order } = require("../models/order");
 const User = require("../models/user");
 
 
@@ -41,6 +43,18 @@ exports.updateUser = (req, res) => {
     )
 }
 
+exports.userPurchaseList = (req,res) => {
+    Order.find({user: req.profile._id})
+    .populate("user", "_id name")
+    .exec((err, order) => {
+        if(err){
+            return res.status(400).json({
+                error: "No Order in this account"
+            })
+        }
+        return res.json(order);
+    })
+}
 // exercise file
 // exports.getAllUsers = (req, res) => {
 //     User.find({}, function(err, users) {
