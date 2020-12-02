@@ -38,3 +38,17 @@ exports.getAllCategories = (req,res) => {
         res.json({items});
     })
 }
+
+exports.updateCategory = (req, res) => {
+    const category = req.category;
+    category.name = req.body.name;
+
+    category.save((err, updatedCategory) => {
+        if (err) {
+            return res.status(400).json({
+                error: "No Categories Found"
+            })
+        }
+        res.json({updatedCategory});
+    });
+}
