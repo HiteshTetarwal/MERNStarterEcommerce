@@ -101,7 +101,7 @@ exports.isAuthenticated = (req, res, next) => {
 
 exports.isAdmin = (req, res, next) => {
     if (req.profile.role === 0) {
-        return req.status(403).json({
+        return res.status(403).json({
             error : "YOU ARE NOT ADMIN, ACCESS DENIED!"
         })        
     }
