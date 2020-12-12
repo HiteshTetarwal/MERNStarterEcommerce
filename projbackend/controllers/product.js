@@ -30,8 +30,22 @@ exports.createProduct = (req, res) => {
             })
         }
 
+        //destructure the fiels
+        const { name, description, price, category, stock } = fields
 
-        //TODO: restrictions on field
+        if(
+            !name ||
+            !description ||
+            !price ||
+            !category ||
+            !stock
+        ){
+            return res.status(400).json({
+                error : "Please include all fields"
+            });
+        }
+
+        //Can be done: restrictions on field to ensure the data is according to your choice
         let product = new Product(fields)
 
         //handle file here
