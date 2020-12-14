@@ -16,4 +16,6 @@ router.post("/product/create/:userId",
     isAdmin, 
     createProduct);
 
+router.get();
+
 module.exports = router;
