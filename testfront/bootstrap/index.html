@@ -3,9 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <title>Bootstrap crash course</title>
 </head>
 <body>
-    <h1>This is bootstrap class</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1 class="bg-success text-white px-3 py-3">This is bootstrap grid</h1>
+            </div>
+            <div class="col-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="me.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <div class="row">
+                          <div class="col-6">
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          <div class="col-6">
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
