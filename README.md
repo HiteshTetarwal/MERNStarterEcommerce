@@ -26,3 +26,5 @@ To run this project without any issues, you will need to install all the package
 2. Go to the porject directory where app.js is located and run the below command to start the server.
 
             npm start
+
+### To create the front end project using react(projfrontend) follow the instruction given on [React Installation Guide](https://github.com/HiteshTetarwal/ReactJS_Starter). And use command ```npx create-react-app projfrontend``` to name the frontendapplication as projfrontend
