@@ -1,7 +1,8 @@
 import React from 'react';
+import Home from './core/Home';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-export default function Routes() {
+const Routes = () => {
     return (
         <BrowserRouter>
             <Switch>
