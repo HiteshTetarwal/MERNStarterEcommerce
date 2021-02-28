@@ -5,7 +5,7 @@ import { API } from "../../backend";
 export const signup = user => {
     return fetch(`${API}/signup`, {
         method: 'POST',
-        head: {
+        headers: {
             Accept: "application/json",
             "Content-Type" : "application/json"
         },
@@ -21,7 +21,7 @@ export const signup = user => {
 export const signin = user => {
     return fetch(`${API}/signin`, {
         method: 'POST',
-        head: {
+        headers: {
             Accept: "application/json",
             "Content-Type" : "application/json"
         },
