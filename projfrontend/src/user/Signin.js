@@ -31,24 +31,35 @@ const Signin = () => {
                 setValues({...values, error: data.error, loading: true });
             } else {
                 authenticate(data, () => {
-                    setValues({...value, didRedirect: true})
+                    setValues({...values, didRedirect: true})
                 })
             }
         })
         .catch(console.log("signin request failed"))
     }
 
-    const successMessage = () => {
+
+    const performRedirect = () => {
+      if (didRedirect) {
+        if (user && user.role === 1) {
+          return <p>Redirect to admin</p>
+        } else {
+          return <p>redirect to user dashboard</p>
+        }
+
+        if (isAuthenticated()) {
+          return <Redirect to="/" />          
+        }
+      }
+    }
+
+    const loadingMessage = () => {
     return(
-        <div className="row">
-            <div className="col-md-6 offset-sm-3 text-left">
-                <div 
-                className="alert alert-success"
-                style={{display: success? "" : "none"}}>
-                New Account was created successfully. Please <Link to="/signin">Login here</Link>
-                </div>
-            </div>
-        </div>)
+      loading && (
+        <div className="alert alert-info">
+          <h2>Loading...</h2>
+        </div>
+      ))
     }
 
   const errorMessage = () => {
@@ -87,7 +98,10 @@ const Signin = () => {
 
     return(
         <Base title="Sign in page" description="A page for user to sign in!">
-            <h1>Sign In Works</h1>
+            {loadingMessage()}
+            {errorMessage()}
+            {signInForm()}
+            {performRedirect()}
         </Base>
     )
 };
