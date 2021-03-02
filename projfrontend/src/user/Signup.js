@@ -57,7 +57,7 @@ const Signup = () => {
               <label className="text-light">Password</label>
               <input className="form-control" onChange={handleChange("password")} type="password" value={password} />
             </div>
-            <button onClick={onSubmit} className="btn btn-success btn-block">Submit</button>
+            <button style={{width:"100%", marginTop: "14px"}} onClick={onSubmit} className="btn btn-success btn-block">Submit</button>
           </form>
         </div>
       </div>
