@@ -28,7 +28,7 @@ const Signin = () => {
         signin({email, password})
         .then(data => {
             if(data.error){
-                setValues({...values, error: data.error, loading: true });
+                setValues({...values, error: data.error, loading: false });
             } else {
                 authenticate(data, () => {
                     setValues({...values, didRedirect: true})
@@ -40,6 +40,7 @@ const Signin = () => {
 
 
     const performRedirect = () => {
+      // TODO: do a redirect here
       if (didRedirect) {
         if (user && user.role === 1) {
           return <p>Redirect to admin</p>
